@@ -1,0 +1,213 @@
+:root {
+  /* Colors */
+  --color-yellow: hsl(47, 88%, 63%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-gray-500: hsl(0, 0%, 42%);
+  --color-gray-950: hsl(0, 0%, 7%);
+
+  /* Typography Base */
+  --font-family: "Figtree", sans-serif;
+  --line-height: 150%;
+  --letter-spacing: 0px;
+
+  /* Font Weights */
+  --fw-medium: 500;
+  --fw-black: 800;
+
+  /* Text Presets (Typography Values) */
+  /* Preset 1 - Main Title */
+  --fs-preset-1: 1.5rem;   /* 24px */
+  --fw-preset-1: var(--fw-black);
+
+  /* Preset 2 - Body Text */
+  --fs-preset-2: 1rem;     /* 16px */
+  --fw-preset-2: var(--fw-medium);
+
+  /* Preset 3 - Small Text (Date/Author) */
+  --fs-preset-3: 0.875rem; /* 14px */
+  --fw-preset-3: var(--fw-medium);
+  --fw-preset-3-bold: var(--fw-black);
+
+  /* Spacing Scale */
+  --space-50: 0.25rem;  /* 4px */
+  --space-100: 0.5rem;  /* 8px */
+  --space-150: 0.75rem; /* 12px */
+  --space-200: 1rem;    /* 16px */
+  --space-300: 1.5rem;  /* 24px */
+  --space-400: 2rem;    /* 32px */
+
+  /* Utils */
+  --radius-lg: 1.25rem; /* 20px */
+  --radius-sm: 0.25rem; /* 4px */
+  --shadow: 8px 8px 0px var(--color-gray-950);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-yellow);
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 2. Typography Utility Classes */
+.text-preset-1 {
+  font-size: var(--fs-preset-1);
+  font-weight: var(--fw-preset-1);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  color: var(--color-gray-950);
+}
+
+.text-preset-2 {
+  font-size: var(--fs-preset-2);
+  font-weight: var(--fw-preset-2);
+  line-height: var(--line-height);
+  color: var(--color-gray-500);
+}
+
+.text-preset-3 {
+  font-size: var(--fs-preset-3);
+  font-weight: var(--fw-preset-3);
+  line-height: var(--line-height);
+  color: var(--color-gray-950);
+}
+
+.text-preset-3-bold {
+  font-size: var(--fs-preset-3);
+  font-weight: var(--fw-preset-3-bold);
+  line-height: var(--line-height);
+  color: var(--color-gray-950);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-300);
+}
+
+.card {
+  background-color: var(--color-white);
+  width: min(100%, 24rem);
+  padding: var(--space-300);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-950);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--color-gray-950);
+}
+
+.card__image img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.badge {
+  background-color: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.badge a {
+  display: block;
+  padding: var(--space-50) var(--space-150);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.badge a:hover,
+.badge a:focus {
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+.title a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.title a:hover,
+.title a:focus {
+  color: var(--color-yellow);
+}
+
+.title a:focus-visible {
+  outline: 2px dashed var(--color-gray-950);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+}
+
+.card__author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.card__author-name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.card__author-name a:hover {
+  color: var(--color-yellow);
+}
+
+.author__link {
+  display: flex;
+  border-radius: 50%;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  outline: none;
+}
+
+.author__link:hover,
+.author__link:focus {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.author__link:focus-visible {
+  outline: 2px dashed var(--color-gray-950);
+  outline-offset: 4px;
+}
+
+.card__author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+}
