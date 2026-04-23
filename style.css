@@ -176,10 +176,6 @@ ul {
   opacity: 0.8;
 }
 
-.date {
-  margin-top: calc(var(--space-150) * -1); 
-}
-
 .title a {
   display: block;
 }
