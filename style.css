@@ -65,7 +65,6 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color var(--transition-duration) var(--transition-easing);
 }
 
 img {
@@ -122,8 +121,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
-  transition: transform var(--transition-duration) var(--transition-easing), 
-              box-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .card:hover {
@@ -141,7 +138,6 @@ ul {
   width: 100%;
   display: block;
   border-radius: var(--radius-sm);
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .card__image a:hover img {
@@ -166,13 +162,46 @@ ul {
 .badge a {
   display: block;
   padding: var(--space-50) var(--space-150);
-  transition: transform var(--transition-duration) var(--transition-easing), opacity var(--transition-duration) var(--transition-easing);
 }
 
 .badge a:hover,
 .badge a:focus {
   transform: translateY(-1px);
   opacity: 0.8;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+}
+
+.card__author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.card__author-name a:hover {
+  color: var(--color-yellow);
+}
+
+.author__link {
+  display: flex;
+  border-radius: 50%;
+  outline: none;
+}
+
+.author__link:hover,
+.author__link:focus {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.author__link:focus-visible {
+  outline: 2px dashed var(--color-gray-950);
+  outline-offset: 4px;
 }
 
 .title a {
@@ -190,49 +219,17 @@ ul {
   border-radius: 2px;
 }
 
-.card__author {
-  display: flex;
-  align-items: center;
-  gap: var(--space-150);
-}
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-easing);
+  }
 
-.card__author img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: block;
-}
+  a, .card, .badge a {
+    transition-property: color, transform, box-shadow, opacity, filter;
+  }
 
-.card__author-name a {
-  transition: transform var(--transition-duration) var(--transition-easing);
-}
-
-.card__author-name a:hover {
-  color: var(--color-yellow);
-}
-
-.author__link {
-  display: flex;
-  border-radius: 50%;
-  transition: transform var(--transition-duration) var(--transition-easing), 
-              filter var(--transition-duration) var(--transition-easing);
-  outline: none;
-}
-
-.author__link:hover,
-.author__link:focus {
-  filter: brightness(1.1);
-  transform: scale(1.05);
-}
-
-.author__link:focus-visible {
-  outline: 2px dashed var(--color-gray-950);
-  outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --transition-duration: 0s;
-    --transform-lift: none;
+  .card__image img {
+    transition: transform 0.3s ease;
   }
 }
