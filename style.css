@@ -170,9 +170,25 @@ ul {
   opacity: 0.8;
 }
 
+.title a {
+  display: block;
+}
+
+.title a:hover,
+.title a:focus {
+  color: var(--color-yellow);
+}
+
+.title a:focus-visible {
+  outline: 2px dashed var(--color-gray-950);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .card__author {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-150);
 }
 
@@ -202,21 +218,6 @@ ul {
 .author__link:focus-visible {
   outline: 2px dashed var(--color-gray-950);
   outline-offset: 4px;
-}
-
-.title a {
-  display: block;
-}
-
-.title a:hover,
-.title a:focus {
-  color: var(--color-yellow);
-}
-
-.title a:focus-visible {
-  outline: 2px dashed var(--color-gray-950);
-  outline-offset: 4px;
-  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
