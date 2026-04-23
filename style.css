@@ -40,6 +40,12 @@
   --radius-lg: 1.25rem; /* 20px */
   --radius-sm: 0.25rem; /* 4px */
   --shadow: 8px 8px 0px var(--color-gray-950);
+
+  /* Animation & Motion */
+  --transition-duration: 0.2s;
+  --transition-easing: ease;
+  --transform-lift: translate(-4px, -4px);
+  --shadow-hover: 12px 12px 0px var(--color-gray-950);
 }
 
 * {
@@ -48,14 +54,30 @@
   box-sizing: border-box;
 }
 
+/* Add these right below */
+img {
+  max-width: 100%;
+  display: block; 
+}
+
+ul {
+  list-style: none;
+}
+
 body {
-  background-color: var(--color-yellow);
+  min-height: 100vh;
   font-family: var(--font-family);
+  font-size: var(--fs-preset-2);
+  color: var(--color-white);
+  background-color: var(--color-gray-950);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: all var(--transition-speed) ease;
 }
 
 /* 2. Typography Utility Classes */
@@ -107,12 +129,13 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--transition-duration) var(--transition-easing), 
+              box-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 12px 12px 0px var(--color-gray-950);
+  transform: var(--transform-lift);
+  box-shadow: var(--shadow-hover);
 }
 
 .card__image a {
@@ -160,8 +183,6 @@ a {
 }
 
 .title a {
-  text-decoration: none;
-  color: inherit;
   display: block;
   transition: color 0.2s ease;
 }
@@ -184,15 +205,16 @@ a {
 }
 
 .card__author img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
+  display: block;
 }
 
 .card__author-name a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card__author-name a:hover {
@@ -217,9 +239,9 @@ a {
   outline-offset: 4px;
 }
 
-.card__author img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: block;
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration: 0s;
+    --transform-lift: none;
+  }
 }
