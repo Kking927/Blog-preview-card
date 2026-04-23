@@ -166,7 +166,7 @@ a {
 .badge a {
   display: block;
   padding: var(--space-50) var(--space-150);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform var(--transition-duration) var(--transition-easing), opacity var(--transition-duration) var(--transition-easing);
 }
 
 .badge a:hover,
@@ -204,8 +204,7 @@ a {
 }
 
 .card__author-name a {
-  transition: transform var(--transition-duration) var(--transition-easing), 
-              color var(--transition-duration) var(--transition-easing);
+  transition: transform var(--transition-duration) var(--transition-easing);
 }
 
 .card__author-name a:hover {
