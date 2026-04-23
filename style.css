@@ -170,6 +170,10 @@ ul {
   opacity: 0.8;
 }
 
+.date {
+  margin-top: -.5rem;
+}
+
 .title a {
   display: block;
 }
@@ -196,6 +200,10 @@ ul {
   height: 2rem;
   border-radius: 50%;
   display: block;
+}
+
+.card__author-name {
+  line-height: 1;
 }
 
 .card__author-name a:hover {
