@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --color-yellow: hsl(47, 88%, 63%);
+  --color-yellow: hsl(47, 88%, 63%)
   --color-white: hsl(0, 0%, 100%);
   --color-gray-500: hsl(0, 0%, 42%);
   --color-gray-950: hsl(0, 0%, 7%);
@@ -54,7 +54,14 @@
   box-sizing: border-box;
 }
 
-/* Add these right below */
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--fs-preset-2);
+  background-color: var(--color-yellow);
+  line-height: var(--line-height);
+}
+
 img {
   max-width: 100%;
   display: block; 
@@ -64,25 +71,16 @@ ul {
   list-style: none;
 }
 
-body {
-  min-height: 100vh;
-  font-family: var(--font-family);
-  font-size: var(--fs-preset-2);
-  background-color: var(--color-yellow);
-  line-height: var(--line-height);
-}
-
 a {
   text-decoration: none;
   color: inherit;
-  transition: all var(--transition-speed) ease;
+  transition: all var(--transition-duration) ease;
 }
 
-/* 2. Typography Utility Classes */
+/* Typography Utility Classes */
 .text-preset-1 {
   font-size: var(--fs-preset-1);
   font-weight: var(--fw-preset-1);
-  line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   color: var(--color-gray-950);
 }
@@ -90,21 +88,18 @@ a {
 .text-preset-2 {
   font-size: var(--fs-preset-2);
   font-weight: var(--fw-preset-2);
-  line-height: var(--line-height);
   color: var(--color-gray-500);
 }
 
 .text-preset-3 {
   font-size: var(--fs-preset-3);
   font-weight: var(--fw-preset-3);
-  line-height: var(--line-height);
   color: var(--color-gray-950);
 }
 
 .text-preset-3-bold {
   font-size: var(--fs-preset-3);
   font-weight: var(--fw-preset-3-bold);
-  line-height: var(--line-height);
   color: var(--color-gray-950);
 }
 
@@ -210,9 +205,8 @@ a {
 }
 
 .card__author-name a {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--transition-duration) var(--transition-easing), 
+              color var(--transition-duration) var(--transition-easing);
 }
 
 .card__author-name a:hover {
@@ -222,7 +216,8 @@ a {
 .author__link {
   display: flex;
   border-radius: 50%;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform var(--transition-duration) var(--transition-easing), 
+              filter var(--transition-duration) var(--transition-easing);
   outline: none;
 }
 
