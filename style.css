@@ -68,10 +68,8 @@ body {
   min-height: 100vh;
   font-family: var(--font-family);
   font-size: var(--fs-preset-2);
-  color: var(--color-white);
-  background-color: var(--color-gray-950);
+  background-color: var(--color-yellow);
   line-height: var(--line-height);
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
