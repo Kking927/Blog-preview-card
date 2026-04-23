@@ -128,12 +128,6 @@ ul {
   box-shadow: var(--shadow-hover);
 }
 
-.card__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-300);
-}
-
 .card__image a {
   display: block;
   overflow: hidden;
