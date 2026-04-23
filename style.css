@@ -177,7 +177,6 @@ a {
 
 .title a {
   display: block;
-  transition: color 0.2s ease;
 }
 
 .title a:hover,
